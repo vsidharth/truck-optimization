@@ -56,14 +56,21 @@ def generate_dataset(num_trucks=10, num_requests=30):
     return {"trucks": trucks, "requests": requests}
 
 if __name__ == "__main__":
-    data = generate_dataset()
+
+    import os
     
-    # Ensure the directory path exists and save out the static JSON database artifact
     current_dir = os.path.dirname(os.path.abspath(__file__))
     output_path = os.path.join(current_dir, "bangalore_fleet_data.json")
     
-    with open(output_path, "w") as f:
-        json.dump(data, f, indent=4)
+    # Generate a fresh, completely standalone test dataset
+    random.seed(101)  # New clean testing seed
+    fresh_test_data = generate_dataset(num_trucks=4, num_requests=8)
         
-    print(f"🎉 Success! Generated {len(data['trucks'])} trucks and {len(data['requests'])} requests.")
-    print(f"💾 Static data asset saved securely at: {output_path}")
+    # Save out the clean testing asset, overwriting the old one
+    with open(output_path, "w") as f:
+        json.dump(fresh_test_data, f, indent=4)
+        
+    print(f"🎉 Success! Generated a fresh testing dataset.")
+    print(f"🚛 Total Isolated Trucks: {len(fresh_test_data['trucks'])}")
+    print(f"📦 Total Isolated Requests: {len(fresh_test_data['requests'])}")
+    print(f"💾 Fresh asset saved securely at: {output_path}")

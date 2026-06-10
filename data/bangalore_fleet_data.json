@@ -2,82 +2,34 @@
     "trucks": [
         {
             "id": "TRK-01",
-            "initial_hub": "Peenya (Industrial Zone)",
-            "lat": 13.01075,
-            "lng": 77.511,
-            "max_capacity": 3000,
-            "is_refrigerated": true
+            "initial_hub": "Whitefield (IT/Logistics Hub)",
+            "lat": 12.98634,
+            "lng": 77.73235,
+            "max_capacity": 5000,
+            "is_refrigerated": false
         },
         {
             "id": "TRK-02",
             "initial_hub": "Peenya (Industrial Zone)",
-            "lat": 13.0303,
-            "lng": 77.53569,
+            "lat": 13.0299,
+            "lng": 77.50858,
             "max_capacity": 3000,
             "is_refrigerated": false
         },
         {
             "id": "TRK-03",
             "initial_hub": "Yelahanka (Warehousing Area)",
-            "lat": 13.08127,
-            "lng": 77.57375,
-            "max_capacity": 3000,
-            "is_refrigerated": false
+            "lat": 13.1077,
+            "lng": 77.5785,
+            "max_capacity": 5000,
+            "is_refrigerated": true
         },
         {
             "id": "TRK-04",
-            "initial_hub": "Peenya (Industrial Zone)",
-            "lat": 13.02684,
-            "lng": 77.52864,
-            "max_capacity": 10000,
-            "is_refrigerated": false
-        },
-        {
-            "id": "TRK-05",
-            "initial_hub": "Yelahanka (Warehousing Area)",
-            "lat": 13.08882,
-            "lng": 77.59357,
-            "max_capacity": 3000,
-            "is_refrigerated": true
-        },
-        {
-            "id": "TRK-06",
-            "initial_hub": "Yelahanka (Warehousing Area)",
-            "lat": 13.09361,
-            "lng": 77.57622,
-            "max_capacity": 5000,
-            "is_refrigerated": true
-        },
-        {
-            "id": "TRK-07",
-            "initial_hub": "Peenya (Industrial Zone)",
-            "lat": 13.0214,
-            "lng": 77.51436,
-            "max_capacity": 5000,
-            "is_refrigerated": false
-        },
-        {
-            "id": "TRK-08",
             "initial_hub": "Electronic City (Manufacturing Center)",
-            "lat": 12.86229,
-            "lng": 77.67919,
+            "lat": 12.83773,
+            "lng": 77.65355,
             "max_capacity": 10000,
-            "is_refrigerated": true
-        },
-        {
-            "id": "TRK-09",
-            "initial_hub": "Yelahanka (Warehousing Area)",
-            "lat": 13.08315,
-            "lng": 77.58173,
-            "max_capacity": 10000,
-            "is_refrigerated": false
-        },
-        {
-            "id": "TRK-10",
-            "initial_hub": "Electronic City (Manufacturing Center)",
-            "lat": 12.85309,
-            "lng": 77.67818,
-            "max_capacity": 3000,
             "is_refrigerated": false
         }
     ],
@@ -85,241 +37,65 @@
         {
             "id": "REQ-01",
             "destination_hub": "Whitefield (IT/Logistics Hub)",
-            "lat": 12.98092,
-            "lng": 77.75911,
-            "weight": 2251,
+            "lat": 12.96887,
+            "lng": 77.71956,
+            "weight": 1805,
             "requires_refrigeration": false
         },
         {
             "id": "REQ-02",
-            "destination_hub": "Peenya (Industrial Zone)",
-            "lat": 13.0214,
-            "lng": 77.51814,
-            "weight": 2208,
+            "destination_hub": "Yelahanka (Warehousing Area)",
+            "lat": 13.08833,
+            "lng": 77.58721,
+            "weight": 1123,
             "requires_refrigeration": false
         },
         {
             "id": "REQ-03",
-            "destination_hub": "Whitefield (IT/Logistics Hub)",
-            "lat": 12.96481,
-            "lng": 77.71257,
-            "weight": 1046,
-            "requires_refrigeration": true
+            "destination_hub": "Peenya (Industrial Zone)",
+            "lat": 13.02957,
+            "lng": 77.525,
+            "weight": 1172,
+            "requires_refrigeration": false
         },
         {
             "id": "REQ-04",
-            "destination_hub": "Whitefield (IT/Logistics Hub)",
-            "lat": 12.97137,
-            "lng": 77.71469,
-            "weight": 1446,
+            "destination_hub": "Yelahanka (Warehousing Area)",
+            "lat": 13.11129,
+            "lng": 77.57916,
+            "weight": 657,
             "requires_refrigeration": false
         },
         {
             "id": "REQ-05",
-            "destination_hub": "Electronic City (Manufacturing Center)",
-            "lat": 12.86958,
-            "lng": 77.6756,
-            "weight": 1640,
-            "requires_refrigeration": false
+            "destination_hub": "Yelahanka (Warehousing Area)",
+            "lat": 13.08026,
+            "lng": 77.58856,
+            "weight": 1595,
+            "requires_refrigeration": true
         },
         {
             "id": "REQ-06",
             "destination_hub": "Electronic City (Manufacturing Center)",
-            "lat": 12.86371,
-            "lng": 77.68104,
-            "weight": 969,
+            "lat": 12.86182,
+            "lng": 77.66484,
+            "weight": 1236,
             "requires_refrigeration": true
         },
         {
             "id": "REQ-07",
             "destination_hub": "Electronic City (Manufacturing Center)",
-            "lat": 12.84605,
-            "lng": 77.65265,
-            "weight": 2370,
+            "lat": 12.85258,
+            "lng": 77.65613,
+            "weight": 570,
             "requires_refrigeration": false
         },
         {
             "id": "REQ-08",
-            "destination_hub": "Electronic City (Manufacturing Center)",
-            "lat": 12.83851,
-            "lng": 77.66997,
-            "weight": 2311,
-            "requires_refrigeration": false
-        },
-        {
-            "id": "REQ-09",
             "destination_hub": "Whitefield (IT/Logistics Hub)",
-            "lat": 12.9606,
-            "lng": 77.7148,
-            "weight": 1649,
-            "requires_refrigeration": false
-        },
-        {
-            "id": "REQ-10",
-            "destination_hub": "Electronic City (Manufacturing Center)",
-            "lat": 12.85988,
-            "lng": 77.66714,
-            "weight": 1695,
-            "requires_refrigeration": false
-        },
-        {
-            "id": "REQ-11",
-            "destination_hub": "Electronic City (Manufacturing Center)",
-            "lat": 12.83877,
-            "lng": 77.6899,
-            "weight": 1543,
-            "requires_refrigeration": false
-        },
-        {
-            "id": "REQ-12",
-            "destination_hub": "Peenya (Industrial Zone)",
-            "lat": 13.03267,
-            "lng": 77.53444,
-            "weight": 813,
-            "requires_refrigeration": false
-        },
-        {
-            "id": "REQ-13",
-            "destination_hub": "Yelahanka (Warehousing Area)",
-            "lat": 13.10386,
-            "lng": 77.58539,
-            "weight": 1720,
-            "requires_refrigeration": false
-        },
-        {
-            "id": "REQ-14",
-            "destination_hub": "Electronic City (Manufacturing Center)",
-            "lat": 12.86884,
-            "lng": 77.68443,
-            "weight": 523,
-            "requires_refrigeration": true
-        },
-        {
-            "id": "REQ-15",
-            "destination_hub": "Electronic City (Manufacturing Center)",
-            "lat": 12.86074,
-            "lng": 77.66361,
-            "weight": 1101,
-            "requires_refrigeration": false
-        },
-        {
-            "id": "REQ-16",
-            "destination_hub": "Whitefield (IT/Logistics Hub)",
-            "lat": 12.96815,
-            "lng": 77.75723,
-            "weight": 2293,
-            "requires_refrigeration": false
-        },
-        {
-            "id": "REQ-17",
-            "destination_hub": "Whitefield (IT/Logistics Hub)",
-            "lat": 12.97031,
-            "lng": 77.70638,
-            "weight": 1780,
-            "requires_refrigeration": false
-        },
-        {
-            "id": "REQ-18",
-            "destination_hub": "Whitefield (IT/Logistics Hub)",
-            "lat": 12.95611,
-            "lng": 77.74575,
-            "weight": 1604,
-            "requires_refrigeration": false
-        },
-        {
-            "id": "REQ-19",
-            "destination_hub": "Peenya (Industrial Zone)",
-            "lat": 13.02797,
-            "lng": 77.51954,
-            "weight": 729,
-            "requires_refrigeration": false
-        },
-        {
-            "id": "REQ-20",
-            "destination_hub": "Electronic City (Manufacturing Center)",
-            "lat": 12.83958,
-            "lng": 77.65963,
-            "weight": 1661,
-            "requires_refrigeration": true
-        },
-        {
-            "id": "REQ-21",
-            "destination_hub": "Peenya (Industrial Zone)",
-            "lat": 13.03196,
-            "lng": 77.53264,
-            "weight": 2057,
-            "requires_refrigeration": false
-        },
-        {
-            "id": "REQ-22",
-            "destination_hub": "Whitefield (IT/Logistics Hub)",
-            "lat": 12.95514,
-            "lng": 77.72852,
-            "weight": 1625,
-            "requires_refrigeration": false
-        },
-        {
-            "id": "REQ-23",
-            "destination_hub": "Electronic City (Manufacturing Center)",
-            "lat": 12.85111,
-            "lng": 77.67426,
-            "weight": 2475,
-            "requires_refrigeration": false
-        },
-        {
-            "id": "REQ-24",
-            "destination_hub": "Whitefield (IT/Logistics Hub)",
-            "lat": 12.97852,
-            "lng": 77.72394,
-            "weight": 1875,
-            "requires_refrigeration": false
-        },
-        {
-            "id": "REQ-25",
-            "destination_hub": "Yelahanka (Warehousing Area)",
-            "lat": 13.11598,
-            "lng": 77.58806,
-            "weight": 1007,
-            "requires_refrigeration": false
-        },
-        {
-            "id": "REQ-26",
-            "destination_hub": "Peenya (Industrial Zone)",
-            "lat": 13.02014,
-            "lng": 77.52353,
-            "weight": 971,
-            "requires_refrigeration": false
-        },
-        {
-            "id": "REQ-27",
-            "destination_hub": "Whitefield (IT/Logistics Hub)",
-            "lat": 12.95029,
-            "lng": 77.74247,
-            "weight": 620,
-            "requires_refrigeration": false
-        },
-        {
-            "id": "REQ-28",
-            "destination_hub": "Peenya (Industrial Zone)",
-            "lat": 13.03716,
-            "lng": 77.53439,
-            "weight": 645,
-            "requires_refrigeration": false
-        },
-        {
-            "id": "REQ-29",
-            "destination_hub": "Whitefield (IT/Logistics Hub)",
-            "lat": 12.96114,
-            "lng": 77.72912,
-            "weight": 1604,
-            "requires_refrigeration": false
-        },
-        {
-            "id": "REQ-30",
-            "destination_hub": "Yelahanka (Warehousing Area)",
-            "lat": 13.08972,
-            "lng": 77.58892,
-            "weight": 1333,
+            "lat": 12.96111,
+            "lng": 77.74582,
+            "weight": 1328,
             "requires_refrigeration": false
         }
     ]

@@ -2,10 +2,6 @@ import math
 import pulp
 
 def calculate_haversine(lat1, lon1, lat2, lon2):
-    """
-    Calculates the straight-line distance in kilometers between two 
-    points on the earth using the Haversine formula.
-    """
     R = 6371.0  # Earth radius in kilometers
     
     dlat = math.radians(lat2 - lat1)
@@ -19,14 +15,9 @@ def calculate_haversine(lat1, lon1, lat2, lon2):
 
 
 def solve_regret_heuristic(trucks, requests):
-    """
-    Advanced Heuristic: Computes opportunity cost (regret delta between 
-    1st and 2nd closest choices) to sequence highly-constrained or isolated demands first.
-    """
     assignments = []
     total_distance = 0.0
     
-    # Deep copy variables to prevent mutating initial state across runs
     available_trucks = [dict(t) for t in trucks]
     for t in available_trucks:
         t['current_capacity'] = t['max_capacity']
@@ -37,7 +28,7 @@ def solve_regret_heuristic(trucks, requests):
         request_regrets = []
         
         for req in remaining_requests:
-            # Apply Hard Constraints: Filter for valid capability and weight capacity
+            # Hard Constraints: Filter for valid capability and weight capacity
             valid_trucks = [
                 t for t in available_trucks 
                 if (not req['requires_refrigeration'] or t['is_refrigerated']) 
@@ -47,7 +38,7 @@ def solve_regret_heuristic(trucks, requests):
             if not valid_trucks:
                 continue
             
-            # Calculate distance to all valid options and sort ascending
+            # Calculate distance to all valid trucks and sort ascending
             truck_distances = []
             for t in valid_trucks:
                 d = calculate_haversine(t['lat'], t['lng'], req['lat'], req['lng'])
@@ -59,7 +50,7 @@ def solve_regret_heuristic(trucks, requests):
             if len(truck_distances) >= 2:
                 regret = truck_distances[1][0] - truck_distances[0][0]
             else:
-                regret = truck_distances[0][0] * 2  # No backup option available, amplify priority
+                regret = truck_distances[0][0] * 2  # Regret assigned a large value to increase priority of the request
                 
             request_regrets.append({
                 "regret": regret,
@@ -69,7 +60,7 @@ def solve_regret_heuristic(trucks, requests):
             })
             
         if not request_regrets:
-            break  # Remainder unfulfillable due to capacity/capability starvation
+            break
             
         # Prioritize highest regret penalty first
         request_regrets.sort(key=lambda x: x['regret'], reverse=True)
@@ -97,10 +88,6 @@ def solve_regret_heuristic(trucks, requests):
 
 
 def solve_milp(trucks, requests):
-    """
-    Global Optimization: Formulates a Mixed-Integer Linear Program via PuLP
-    to resolve simultaneous matching matrix nodes globally.
-    """
     # Initialize minimization problem
     prob = pulp.LpProblem("Fleet_Optimization", pulp.LpMinimize)
     
@@ -120,7 +107,7 @@ def solve_milp(trucks, requests):
     # Objective Function: Minimize overall fleet distance sum 
     prob += pulp.lpSum(x[t['id'], r['id']] * distance_map[t['id'], r['id']] for t in trucks for r in requests)
     
-    # --- HARD CONSTRAINTS --- 
+    # HARD CONSTRAINTS 
     
     # 1. Single Assignment Constraint: Each request processed at most once
     for r in requests:
@@ -130,13 +117,13 @@ def solve_milp(trucks, requests):
     for t in trucks:
         prob += pulp.lpSum(x[t['id'], r['id']] * r['weight'] for r in requests) <= t['max_capacity']
         
-    # 3. Capability Compatibility Constraint: Force unviable match pathways to zero
+    # 3. Capability Compatibility Constraint: Avoid Infeasible match (Refrigerated and Non-refrigerated)
     for r in requests:
         for t in trucks:
             if r['requires_refrigeration'] and not t['is_refrigerated']:
                 prob += x[t['id'], r['id']] == 0
                 
-    # Invoke Default Open-Source Solver (CBC) silently
+    # Solve the MIP formulation
     prob.solve(pulp.PULP_CBC_CMD(msg=False))
     
     # Collect results if solution is valid
